@@ -1,0 +1,241 @@
+:root {
+  --bg-page: #faf7f2;
+  --bg-surface: #ffffff;
+  --bg-dark: #1f1a17;
+  --bg-dark-elevated: #2b2420;
+  --text-primary: #231c18;
+  --text-secondary: #62564e;
+  --text-light: #f6efe8;
+  --accent: #c84b31;
+  --accent-hover: #a93c25;
+  --accent-soft: #fdece8;
+  --border-color: #e8dfd5;
+  --shadow-sm: 0 4px 16px rgba(31, 26, 23, 0.06);
+  --radius-md: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--accent);
+}
+
+.navbar-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navbar-brand {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-brand span {
+  color: var(--accent);
+}
+
+.navbar-toggle {
+  display: none;
+  background: var(--bg-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  color: #ddd2c8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-dark-elevated);
+  color: var(--text-light);
+}
+
+.nav-link.active {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Placeholder Sections */
+.section-placeholder {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-block;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.section-placeholder h1 {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.section-placeholder p {
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 2.5rem 1.5rem 1.5rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.footer-block h2,
+.footer-block h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-block p,
+.footer-block li {
+  color: #cfc3b8;
+  font-size: 0.92rem;
+}
+
+.footer-members {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-meta strong {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  max-width: 1120px;
+  margin: 2rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a99b8e;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: inline-block;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 0.5rem;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    text-align: left;
+  }
+}
